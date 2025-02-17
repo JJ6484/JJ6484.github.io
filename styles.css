@@ -60,8 +60,8 @@ sub{
 }
 img{
 	border:0;
-    width: 100px;
-    height: 182px;
+    width: 20px;
+    height: 36px;
 }
 svg:not(:root){
 	overflow:hidden
