@@ -42,6 +42,8 @@ const strategists = [
 	{name: "Rocket Racoon", imgSrc: "/images/strategist/rocket-racoon.png"},
 ];
 
+let players: string[] = [];
+
 const generateHeroes = () => {
 	const vanguardList = document.getElementById("vanguardList") as HTMLDivElement;
 	const duelistList = document.getElementById("duelistList") as HTMLDivElement;
@@ -115,6 +117,8 @@ const generateHeroes = () => {
 }
 
 const addNames = (input: HTMLInputElement) => {
+	deselectButton(input);
+
 	const label = document.querySelector("label[for=" + input.id + "]") as HTMLLabelElement;
 	const textArea = document.getElementById("textNames") as HTMLTextAreaElement;
 
@@ -132,6 +136,11 @@ const changeColor = (button: HTMLButtonElement) => {
 const autoResize = (textArea: HTMLTextAreaElement) => {
 	textArea.style.height = "auto";
 	textArea.style.height = textArea.scrollHeight + "px";
+
+	if (!textArea.textContent)
+		return;
+
+	players = textArea.textContent?.split(", ");
 }
 
 const toggleSection = (section: string) => {
@@ -189,14 +198,10 @@ const changeAll = (select: boolean) => {
 	changeAllStrategists(select);
 }
 
-generateHeroes();
+const deselectButton = (input: HTMLInputElement) => {
+	if (input.checked) {
+		input.checked = false;
+	}
+}
 
-document.querySelectorAll("input[type='radio']").forEach(radio => {
-    radio.addEventListener("click", () => {
-        if (this.checked) {
-			setTimeout(() => {
-				this.checked = false;
-			}, 0);
-        }
-    });
-});
+generateHeroes();

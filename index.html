@@ -86,11 +86,22 @@
         </div>
 
         <article id="optionsSection" class="card">
-          <input id="atLeastOption" type="radio" name="optionsButton">
+          <input id="atLeastOption" type="radio" name="optionsButton" onclick="deselectButton(this)">
           <label for="atLeastOption" class="checkable left5 bottom5">Choose AT LEAST the specified amount of characters entered for each role</label>
-          <input id="exactlyOption" type="radio" name="optionsButton">
+          <input id="exactlyOption" type="radio" name="optionsButton" onclick="deselectButton(this)">
           <label for="exactlyOption" class="checkable left5 bottom5">Choose EXACTLY the specified amount of characters entered for each role</label>
         </div>
+      </div>
+
+      <!--Results-->
+      <div>
+        <h3>Randomizer</h3>
+
+        <fieldset>
+          <input type="number" placeholder="Vanguards">
+          <input type="number" placeholder="Duelists">
+          <input type="number" placeholder="Strategists">
+        </fieldset>
       </div>
 
     </div>

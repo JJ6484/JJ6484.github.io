@@ -1,4 +1,3 @@
-var _this = this;
 var vanguards = [
     { name: "Captain America", imgSrc: "/images/vanguard/captain-america.png" },
     { name: "Doctor Strange", imgSrc: "/images/vanguard/doctor-strange.png" },
@@ -40,6 +39,7 @@ var strategists = [
     { name: "Mantis", imgSrc: "/images/strategist/mantis.png" },
     { name: "Rocket Racoon", imgSrc: "/images/strategist/rocket-racoon.png" },
 ];
+var players = [];
 var generateHeroes = function () {
     var vanguardList = document.getElementById("vanguardList");
     var duelistList = document.getElementById("duelistList");
@@ -97,6 +97,7 @@ var generateHeroes = function () {
     });
 };
 var addNames = function (input) {
+    deselectButton(input);
     var label = document.querySelector("label[for=" + input.id + "]");
     var textArea = document.getElementById("textNames");
     if (!textArea || !label.textContent)
@@ -108,8 +109,12 @@ var changeColor = function (button) {
     button.className = button.className === "stack success" ? "stack button" : "stack success";
 };
 var autoResize = function (textArea) {
+    var _a;
     textArea.style.height = "auto";
     textArea.style.height = textArea.scrollHeight + "px";
+    if (!textArea.textContent)
+        return;
+    players = (_a = textArea.textContent) === null || _a === void 0 ? void 0 : _a.split(", ");
 };
 var toggleSection = function (section) {
     var sectionElement = document.getElementById("".concat(section, "Section"));
@@ -154,13 +159,9 @@ var changeAll = function (select) {
     changeAllDuelists(select);
     changeAllStrategists(select);
 };
+var deselectButton = function (input) {
+    if (input.checked) {
+        input.checked = false;
+    }
+};
 generateHeroes();
-document.querySelectorAll("input[type='radio']").forEach(function (radio) {
-    radio.addEventListener("click", function () {
-        if (_this.checked) {
-            setTimeout(function () {
-                _this.checked = false;
-            }, 0);
-        }
-    });
-});
