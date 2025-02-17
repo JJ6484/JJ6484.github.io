@@ -15,6 +15,22 @@ h3 {
     cursor: pointer;
 }
 
+h3:hover {
+    background-color: #ccc
+}
+
+h3:after {
+  content: '\02795';
+  font-size: 13px;
+  color: white;
+  float: right;
+  margin-left: 5px;
+}
+
+.active::after {
+    content: '\2796';
+}
+
 html{
 	font-family:sans-serif;
 	-ms-text-size-adjust:100%;
