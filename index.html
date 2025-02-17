@@ -35,8 +35,8 @@
         <article id="filterHeroesSection" class="card collapsed" style="overflow: auto;">
           <header>
             <div>
-              <button class="button" onclick="changeAllVanguards(true)">Select All</button>
-              <button class="button" onclick="changeAllVanguards(false)">Unselect All</button>
+              <button class="button" onclick="changeAll(true)">Select All</button>
+              <button class="button" onclick="changeAll(false)">Unselect All</button>
             </div>
 
             <div class="contentBetween">
@@ -76,11 +76,11 @@
           <span id="optionsToggle" class="blue">-</span>
         </div>
 
-        <div id="optionsSection">
-          <input type="radio" name="atLeastOption">
+        <article id="optionsSection" class="card" style="margin-bottom: 10px;">
+          <input id="atLeastOption" type="radio" name="atLeastOption">
           <label for="atLeastOption" class="checkable">Choose AT LEAST the specified amount of characters entered for each role</label>
           <br>
-          <input type="radio" name="exactlyOption">
+          <input id="exactlyOption" type="radio" name="exactlyOption">
           <label for="exactlyOption" class="checkable">Choose EXACTLY the specified amount of characters entered for each role</label>
         </div>
       </div>
