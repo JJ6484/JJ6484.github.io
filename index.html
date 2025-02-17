@@ -32,8 +32,13 @@
           <span id="filterHeroesToggle" class="blue">+</span>
         </div>
 
-        <article id="filterHeroesSection" class="card collapsed">
+        <article id="filterHeroesSection" class="card collapsed" style="overflow: auto;">
           <header>
+            <div>
+              <button class="button" onclick="changeAllVanguards(true)">Select All</button>
+              <button class="button" onclick="changeAllVanguards(false)">Unselect All</button>
+            </div>
+
             <div class="contentBetween">
               <h4>Vanguards</h4>
               <div>
@@ -62,6 +67,22 @@
             <div id="strategistList"></div>
           </header>
         </article>
+      </div>
+
+      <!--Options-->
+      <div>
+        <div id="optionsHeader" class="header-container" onclick="toggleSection('options')">
+          <h3>Options</h3>
+          <span id="optionsToggle" class="blue">-</span>
+        </div>
+
+        <div id="optionsSection">
+          <input type="radio" name="atLeastOption">
+          <label for="atLeastOption" class="checkable">Choose AT LEAST the specified amount of characters entered for each role</label>
+          <br>
+          <input type="radio" name="exactlyOption">
+          <label for="exactlyOption" class="checkable">Choose EXACTLY the specified amount of characters entered for each role</label>
+        </div>
       </div>
 
     </div>

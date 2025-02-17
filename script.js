@@ -51,7 +51,7 @@ var generateHeroes = function () {
         img.src = vanguard.imgSrc;
         img.alt = vanguard.name;
         var button = document.createElement("button");
-        button.classList.add("stack", "button");
+        button.classList.add("stack", "success");
         button.textContent = vanguard.name;
         button.onclick = function () {
             changeColor(button);
@@ -68,7 +68,7 @@ var generateHeroes = function () {
         img.src = duelist.imgSrc;
         img.alt = duelist.name;
         var button = document.createElement("button");
-        button.classList.add("stack", "button");
+        button.classList.add("stack", "success");
         button.textContent = duelist.name;
         button.onclick = function () {
             changeColor(button);
@@ -139,5 +139,10 @@ var changeAllStrategists = function (select) {
             changeColor(button);
         }
     });
+};
+var changeAll = function (select) {
+    changeAllVanguards(select);
+    changeAllDuelists(select);
+    changeAllStrategists(select);
 };
 generateHeroes();

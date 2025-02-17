@@ -50,6 +50,7 @@ textarea.collapsed, article.collapsed {
 }
 
 .contentBetween {
+    display: flex;
     justify-content: space-between;
 }
 

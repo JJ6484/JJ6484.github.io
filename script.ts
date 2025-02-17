@@ -57,7 +57,7 @@ const generateHeroes = () => {
 		img.alt = vanguard.name;
 
 		const button = document.createElement("button");
-		button.classList.add("stack", "button");
+		button.classList.add("stack", "success");
 		button.textContent = vanguard.name;
 		button.onclick = () => {
 			changeColor(button);
@@ -79,7 +79,7 @@ const generateHeroes = () => {
 		img.alt = duelist.name;
 
 		const button = document.createElement("button");
-		button.classList.add("stack", "button");
+		button.classList.add("stack", "success");
 		button.textContent = duelist.name;
 		button.onclick = () => {
 			changeColor(button);
@@ -170,6 +170,12 @@ const changeAllStrategists = (select: boolean) => {
 			changeColor(button);
 		}
 	});
+}
+
+const changeAll = (select: boolean) => {
+	changeAllVanguards(select);
+	changeAllDuelists(select);
+	changeAllStrategists(select);
 }
 
 generateHeroes();
