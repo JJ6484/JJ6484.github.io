@@ -4,9 +4,13 @@ const dps = new Array<HTMLInputElement>();
 const supports = new Array<HTMLInputElement>();
 var rolledHeroes = new Array<string>();
 
-const changeColor = () => {
-	let button = document.getElementById('capButton') as HTMLButtonElement;
+const changeColor = (button: HTMLAnchorElement) => {
 	button.style.backgroundColor = button.style.backgroundColor === "#0074d9" ? "#2ecc40" : "#0074d9";
+}
+
+const autoResize = (textArea: HTMLTextAreaElement) => {
+	textArea.style.height = "auto";
+	textArea.style.height = textArea.scrollHeight + "px";
 }
 
 const appendHero = (parent: HTMLElement, arr: Array<HTMLInputElement>, id: string) => {

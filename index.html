@@ -16,7 +16,7 @@
       <h1>Marvel Rivals Randomizer</h1>
 
       <h3>Names</h3>
-      <textarea placeholder="Enter names on separate lines"></textarea>
+      <textarea oninput="autoResize(this)" placeholder="Enter names on separate lines"></textarea>
 
       <br />
 
@@ -25,7 +25,7 @@
         <header>
           <div class="width110">
             <img class="stack" src="images/vanguard/captain-america.png">
-            <a id="capButton" class="toggle button stack" onclick="changeColor()">Captain America</a>
+            <a class="toggle button stack" onclick="changeColor(this)">Captain America</a>
           </div>
         </header>
       </article>
