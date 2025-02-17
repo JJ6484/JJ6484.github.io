@@ -116,14 +116,13 @@ const generateHeroes = () => {
 
 const addNames = (input: HTMLInputElement) => {
 	const label = document.querySelector("label[for=" + input.id + "]") as HTMLLabelElement;
-	const textNames = document.getElementById("textNames");
+	const textArea = document.getElementById("textNames") as HTMLTextAreaElement;
 
-	if (textNames && label.textContent) {
-		textNames.textContent = label.textContent.split(", ").join("\n");
-	}
-	else if (textNames && label.textContent === null) {
-		textNames.textContent = null;
-	}
+	if (!textArea || !label.textContent)
+		return;
+
+	textArea.textContent = input.checked ? label.textContent.split(", ").join("\n") : null; 
+	autoResize(textArea);
 }
 
 const changeColor = (button: HTMLButtonElement) => {

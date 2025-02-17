@@ -98,13 +98,11 @@ var generateHeroes = function () {
 };
 var addNames = function (input) {
     var label = document.querySelector("label[for=" + input.id + "]");
-    var textNames = document.getElementById("textNames");
-    if (textNames && label.textContent) {
-        textNames.textContent = label.textContent.split(", ").join("\n");
-    }
-    else if (textNames && label.textContent === null) {
-        textNames.textContent = null;
-    }
+    var textArea = document.getElementById("textNames");
+    if (!textArea || !label.textContent)
+        return;
+    textArea.textContent = input.checked ? label.textContent.split(", ").join("\n") : null;
+    autoResize(textArea);
 };
 var changeColor = function (button) {
     button.className = button.className === "stack success" ? "stack button" : "stack success";
