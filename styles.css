@@ -1,5 +1,9 @@
-width110 {
+.width110 {
     width: 110px;
+}
+
+.height200 {
+    height: 200px;
 }
 
 html{
@@ -63,7 +67,7 @@ sub{
 	bottom:-0.25em
 }
 img{
-	border:0;
+	border:0
 }
 svg:not(:root){
 	overflow:hidden
@@ -261,7 +265,7 @@ i[class^=icon-]:before,i[class*=" icon-"]:before{
 	background:#aaa
 }
 :checked+.toggle,:checked+.toggle:hover{
-	box-shadow:inset 0 0 0 99em rgba(17,17,17,.2)
+	box-shadow:inset 0 0 0 99em #2ecc40
 }
 [type]+.toggle{
 	padding:.3em .9em;
