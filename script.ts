@@ -101,7 +101,7 @@ const generateHeroes = () => {
 		img.alt = strategist.name;
 
 		const button = document.createElement("button");
-		button.classList.add("stack", "button");
+		button.classList.add("stack", "success");
 		button.textContent = strategist.name;
 		button.onclick = () => {
 			changeColor(button);
@@ -115,7 +115,7 @@ const generateHeroes = () => {
 }
 
 const changeColor = (button: HTMLButtonElement) => {
-	button.className = button.className === "stack button" ? "stack success" : "stack button";
+	button.className = button.className === "stack success" ? "stack button" : "stack success";
 }
 
 const autoResize = (textArea: HTMLTextAreaElement) => {
@@ -131,6 +131,45 @@ const toggleSection = (section: string) => {
 		sectionElement.classList.toggle("collapsed");
 		toggleElement.textContent = sectionElement.classList.contains("collapsed") ? "+" : "-";
 	}
+}
+
+const changeAllVanguards = (select: boolean) => {
+	const vanguardParent = document.getElementById("vanguardList") as HTMLDivElement;
+	const vanguardChildren = vanguardParent.querySelectorAll("div");
+
+	vanguardChildren.forEach(vanguard => {
+		const button = vanguard.querySelector("button") as HTMLButtonElement;
+		
+		if (button.className.includes("success") !== select) {
+			changeColor(button);
+		}
+	});
+}
+
+const changeAllDuelists = (select: boolean) => {
+	const duelistParent = document.getElementById("duelistList") as HTMLDivElement;
+	const duelistChildren = duelistParent.querySelectorAll("div");
+
+	duelistChildren.forEach(duelist => {
+		const button = duelist.querySelector("button") as HTMLButtonElement;
+		
+		if (button.className.includes("success") !== select) {
+			changeColor(button);
+		}
+	});
+}
+
+const changeAllStrategists = (select: boolean) => {
+	const strategistParent = document.getElementById("strategistList") as HTMLDivElement;
+	const strategistChildren = strategistParent.querySelectorAll("div");
+
+	strategistChildren.forEach(strategist => {
+		const button = strategist.querySelector("button") as HTMLButtonElement;
+		
+		if (button.className.includes("success") !== select) {
+			changeColor(button);
+		}
+	});
 }
 
 generateHeroes();

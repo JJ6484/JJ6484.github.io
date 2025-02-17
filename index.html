@@ -29,18 +29,36 @@
       <div>
         <div id="filterHeroesHeader" class="header-container" onclick="toggleSection('filterHeroes')">
           <h3>Filter heroes</h3>
-          <span id="filterHeroesToggle" class="blue">-</span>
+          <span id="filterHeroesToggle" class="blue">+</span>
         </div>
 
-        <article id="filterHeroesSection" class="card">
+        <article id="filterHeroesSection" class="card collapsed">
           <header>
-            <h4>Vanguards</h4>
+            <div class="contentBetween">
+              <h4>Vanguards</h4>
+              <div>
+                <button class="button" onclick="changeAllVanguards(true)">Select All</button>
+                <button class="button" onclick="changeAllVanguards(false)">Unselect All</button>
+              </div>
+            </div>
             <div id="vanguardList"></div>
             
-            <h4>Duelists</h4>
+            <div class="contentBetween">
+              <h4>Duelists</h4>
+              <div>
+                <button class="button" onclick="changeAllDuelists(true)">Select All</button>
+                <button class="button" onclick="changeAllDuelists(false)">Unselect All</button>
+              </div>
+            </div>
             <div id="duelistList"></div>
 
-            <h4>Strategists</h4>
+            <div class="contentBetween">
+              <h4>Strategists</h4>
+              <div>
+                <button class="button" onclick="changeAllStrategists(true)">Select All</button>
+                <button class="button" onclick="changeAllStrategists(false)">Unselect All</button>
+              </div>
+            </div>
             <div id="strategistList"></div>
           </header>
         </article>
