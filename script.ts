@@ -9,8 +9,10 @@ const autoResize = (textArea: HTMLTextAreaElement) => {
 
 const toggleSection = (section: string) => {
 	const sectionElement = document.getElementById(`${section}Section`);
+	const toggleElement = document.getElementById(`${section}Toggle`);
 	
-	if (sectionElement) {
+	if (sectionElement && toggleElement) {
 		sectionElement.classList.toggle("collapsed");
+		toggleElement.textContent = sectionElement.classList.contains("collapsed") ? "+" : "-";
 	}
 }

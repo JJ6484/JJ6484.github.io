@@ -2,7 +2,7 @@
     width: 110px;
 }
 
-textarea, .card {
+textarea, article {
     width: 100%;
     max-height: 500px;
     opacity: 1;
@@ -10,7 +10,7 @@ textarea, .card {
     overflow: hidden;
 }
 
-textarea.collapsed, card.collapsed {
+textarea.collapsed, article.collapsed {
     max-height: 0;
     opacity: 0;
 }
