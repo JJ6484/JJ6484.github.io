@@ -1,3 +1,7 @@
+width110 {
+    width: 110px;
+}
+
 html{
 	font-family:sans-serif;
 	-ms-text-size-adjust:100%;
@@ -60,8 +64,6 @@ sub{
 }
 img{
 	border:0;
-    width: 20px;
-    height: 36px;
 }
 svg:not(:root){
 	overflow:hidden
