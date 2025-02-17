@@ -1,5 +1,3 @@
-export {}
-
 const tanks = new Array<HTMLInputElement>();
 const dps = new Array<HTMLInputElement>();
 const supports = new Array<HTMLInputElement>();

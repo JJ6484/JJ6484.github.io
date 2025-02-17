@@ -1,5 +1,3 @@
-"use strict";
-exports.__esModule = true;
 var tanks = new Array();
 var dps = new Array();
 var supports = new Array();
