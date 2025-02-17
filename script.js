@@ -11,11 +11,6 @@ buttons.forEach(function (button) {
     button.addEventListener('click', function () {
         _this.classList.toggle("active");
         var content = _this.nextElementSibling;
-        if (content.style.maxHeight) {
-            content.style.maxHeight = null;
-        }
-        else {
-            content.style.maxHeight = content.scrollHeight + "px";
-        }
+        content.style.maxHeight = content.style.maxHeight ? null : content.scrollHeight + "px";
     });
 });
