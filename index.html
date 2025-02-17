@@ -21,18 +21,27 @@
           <h3>Names</h3>
           <span id="namesToggle" class="blue">-</span>
         </div>
+        
         <textarea id="namesSection" oninput="autoResize(this)" placeholder="Enter names on separate lines"></textarea>
       </div>
 
       <!--Filter heroes-->
       <div>
-        <h3 id="filterHeroesHeader" onclick="toggleSection('filterHeroes')">Filter heroes <span id="filterHeroesToggle" class="blue">-</span></h3>
+        <div id="filterHeroesHeader" class="header-container" onclick="toggleSection('filterHeroes')">
+          <h3>Filter heroes</h3>
+          <span id="filterHeroesToggle" class="blue">-</span>
+        </div>
+
         <article id="filterHeroesSection" class="card">
           <header>
-            <div class="width110">
-              <img class="stack" src="images/vanguard/captain-america.png">
-              <button class="stack button" onclick="changeColor(this)">Captain America</a>
-            </div>
+            <h4>Vanguards</h4>
+            <div id="vanguardList"></div>
+            
+            <h4>Duelists</h4>
+            <div id="duelistList"></div>
+
+            <h4>Strategists</h4>
+            <div id="strategistList"></div>
           </header>
         </article>
       </div>
