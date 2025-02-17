@@ -17,13 +17,16 @@
 
       <!--Names-->
       <div>
-        <h3 id="namesHeader" onclick="toggleSection('names')">Names <span id="namesToggle">-</span></h3>
+        <div id="namesHeader" class="header-container" onclick="toggleSection('names')">
+          <h3>Names</h3>
+          <span id="namesToggle" class="blue">-</span>
+        </div>
         <textarea id="namesSection" oninput="autoResize(this)" placeholder="Enter names on separate lines"></textarea>
       </div>
 
       <!--Filter heroes-->
       <div>
-        <h3 id="filterHeroesHeader" onclick="toggleSection('filterHeroes')">Filter heroes <span id="filterHeroesToggle">-</span></h3>
+        <h3 id="filterHeroesHeader" onclick="toggleSection('filterHeroes')">Filter heroes <span id="filterHeroesToggle" class="blue">-</span></h3>
         <article id="filterHeroesSection" class="card">
           <header>
             <div class="width110">
