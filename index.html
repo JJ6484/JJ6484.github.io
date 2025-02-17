@@ -12,20 +12,27 @@
 
   <body>
     <div style="padding: 0 5%; box-sizing: border-box;">
+
       <h1>Marvel Rivals Randomizer</h1>
 
-      <h3>Names</h3>
-      <textarea oninput="autoResize(this)" placeholder="Enter names on separate lines"></textarea>
+      <button type="button" class="collapsible"></button>
+      <div class="content">
+        <h3>Names</h3>
+        <textarea oninput="autoResize(this)" placeholder="Enter names on separate lines"></textarea>
+      </div>
 
-      <h3>Filter heroes</h3>
-      <article class="card">
-        <header>
-          <div class="width110">
-            <img class="stack" src="images/vanguard/captain-america.png">
-            <button class="stack button" onclick="changeColor(this)">Captain America</a>
-          </div>
-        </header>
-      </article>
+      <div>
+        <h3>Filter heroes</h3>
+        <article class="card">
+          <header>
+            <div class="width110">
+              <img class="stack" src="images/vanguard/captain-america.png">
+              <button class="stack button" onclick="changeColor(this)">Captain America</a>
+            </div>
+          </header>
+        </article>
+      </div>
+
     </div>
 
     <script src="script.js"></script>
