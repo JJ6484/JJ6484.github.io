@@ -15,14 +15,15 @@
 
       <h1>Marvel Rivals Randomizer</h1>
 
-      <button type="button" class="collapsible"></button>
-      <div class="content">
-        <h3>Names</h3>
-        <textarea oninput="autoResize(this)" placeholder="Enter names on separate lines"></textarea>
+      <!--Names-->
+      <div>
+        <h3 id="namesHeader" onclick="toggleSection('names')">Names</h3>
+        <textarea id="namesSection" class="collapsible" oninput="autoResize(this)" placeholder="Enter names on separate lines"></textarea>
       </div>
 
+      <!--Filter heroes-->
       <div>
-        <h3>Filter heroes</h3>
+        <h3 id="filterHeroesHeader">Filter heroes</h3>
         <article class="card">
           <header>
             <div class="width110">

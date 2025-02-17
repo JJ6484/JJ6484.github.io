@@ -7,12 +7,10 @@ const autoResize = (textArea: HTMLTextAreaElement) => {
 	textArea.style.height = textArea.scrollHeight + "px";
 }
 
-const buttons = document.querySelectorAll('.button') as NodeListOf<HTMLElement>;
-buttons.forEach(button => {
-	button.addEventListener('click', () => {
-		this.classList.toggle("active");
-
-		var content = this.nextElementSibling;
-		content.style.maxHeight = content.style.maxHeight ? null : content.scrollHeight + "px";
-	});
-});
+const toggleSection = (section: string) => {
+	const sectionElement = document.getElementById(`${section}Section`);
+	
+	if (sectionElement) {
+		sectionElement.classList.toggle("collapsed");
+	}
+}
