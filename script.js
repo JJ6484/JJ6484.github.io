@@ -85,7 +85,7 @@ var generateHeroes = function () {
         img.src = strategist.imgSrc;
         img.alt = strategist.name;
         var button = document.createElement("button");
-        button.classList.add("stack", "button");
+        button.classList.add("stack", "success");
         button.textContent = strategist.name;
         button.onclick = function () {
             changeColor(button);
@@ -96,7 +96,7 @@ var generateHeroes = function () {
     });
 };
 var changeColor = function (button) {
-    button.className = button.className === "stack button" ? "stack success" : "stack button";
+    button.className = button.className === "stack success" ? "stack button" : "stack success";
 };
 var autoResize = function (textArea) {
     textArea.style.height = "auto";
@@ -109,5 +109,35 @@ var toggleSection = function (section) {
         sectionElement.classList.toggle("collapsed");
         toggleElement.textContent = sectionElement.classList.contains("collapsed") ? "+" : "-";
     }
+};
+var changeAllVanguards = function (select) {
+    var vanguardParent = document.getElementById("vanguardList");
+    var vanguardChildren = vanguardParent.querySelectorAll("div");
+    vanguardChildren.forEach(function (vanguard) {
+        var button = vanguard.querySelector("button");
+        if (button.classList.contains("success") !== select) {
+            changeColor(button);
+        }
+    });
+};
+var changeAllDuelists = function (select) {
+    var duelistParent = document.getElementById("duelistList");
+    var duelistChildren = duelistParent.querySelectorAll("div");
+    duelistChildren.forEach(function (duelist) {
+        var button = duelist.querySelector("button");
+        if (button.classList.contains("success") !== select) {
+            changeColor(button);
+        }
+    });
+};
+var changeAllStrategists = function (select) {
+    var strategistParent = document.getElementById("strategistList");
+    var strategistChildren = strategistParent.querySelectorAll("div");
+    strategistChildren.forEach(function (strategist) {
+        var button = strategist.querySelector("button");
+        if (button.classList.contains("success") !== select) {
+            changeColor(button);
+        }
+    });
 };
 generateHeroes();

@@ -140,7 +140,7 @@ const changeAllVanguards = (select: boolean) => {
 	vanguardChildren.forEach(vanguard => {
 		const button = vanguard.querySelector("button") as HTMLButtonElement;
 		
-		if (button.className.includes("success") !== select) {
+		if (button.classList.contains("success") !== select) {
 			changeColor(button);
 		}
 	});
@@ -153,7 +153,7 @@ const changeAllDuelists = (select: boolean) => {
 	duelistChildren.forEach(duelist => {
 		const button = duelist.querySelector("button") as HTMLButtonElement;
 		
-		if (button.className.includes("success") !== select) {
+		if (button.classList.contains("success") !== select) {
 			changeColor(button);
 		}
 	});
@@ -166,7 +166,7 @@ const changeAllStrategists = (select: boolean) => {
 	strategistChildren.forEach(strategist => {
 		const button = strategist.querySelector("button") as HTMLButtonElement;
 		
-		if (button.className.includes("success") !== select) {
+		if (button.classList.contains("success") !== select) {
 			changeColor(button);
 		}
 	});
