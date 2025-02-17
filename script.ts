@@ -1,4 +1,4 @@
-const changeColor = (button: HTMLAnchorElement) => {
+const changeColor = (button: HTMLButtonElement) => {
 	button.className = button.className === "stack button" ? "stack success" : "stack button";
 }
 
