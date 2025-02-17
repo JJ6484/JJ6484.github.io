@@ -194,7 +194,9 @@ generateHeroes();
 document.querySelectorAll("input[type='radio']").forEach(radio => {
     radio.addEventListener("click", () => {
         if (this.checked) {
-            this.checked = false;
+			setTimeout(() => {
+				this.checked = false;
+			}, 0);
         }
     });
 });

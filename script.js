@@ -158,7 +158,9 @@ generateHeroes();
 document.querySelectorAll("input[type='radio']").forEach(function (radio) {
     radio.addEventListener("click", function () {
         if (_this.checked) {
-            _this.checked = false;
+            setTimeout(function () {
+                _this.checked = false;
+            }, 0);
         }
     });
 });
