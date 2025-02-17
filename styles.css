@@ -4,11 +4,15 @@
 
 textarea, .card {
     width: 100%;
-    transition: all 0.3s ease;
+    max-height: 500px;
+    opacity: 1;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    overflow: hidden;
 }
 
 textarea.collapsed, card.collapsed {
-    display: none;
+    max-height: 0;
+    opacity: 0;
 }
 
 h3 {
@@ -20,7 +24,7 @@ h3:hover {
 }
 
 h3:after {
-  content: '\02795';
+  content: '\2796';
   font-size: 13px;
   color: white;
   float: right;
@@ -28,7 +32,7 @@ h3:after {
 }
 
 .active::after {
-    content: '\2796';
+    content: '\02795';
 }
 
 html{
