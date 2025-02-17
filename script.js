@@ -7,7 +7,9 @@ var autoResize = function (textArea) {
 };
 var toggleSection = function (section) {
     var sectionElement = document.getElementById("".concat(section, "Section"));
-    if (sectionElement) {
+    var toggleElement = document.getElementById("".concat(section, "Toggle"));
+    if (sectionElement && toggleElement) {
         sectionElement.classList.toggle("collapsed");
+        toggleElement.textContent = sectionElement.classList.contains("collapsed") ? "+" : "-";
     }
 };
