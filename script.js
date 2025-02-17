@@ -2,6 +2,10 @@ var tanks = new Array();
 var dps = new Array();
 var supports = new Array();
 var rolledHeroes = new Array();
+var changeColor = function () {
+    var button = document.getElementById('capButton');
+    button.style.backgroundColor = button.style.backgroundColor === "#0074d9" ? "#2ecc40" : "#0074d9";
+};
 var appendHero = function (parent, arr, id) {
     var input = document.createElement("input");
     input.type = "checkbox";

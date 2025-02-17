@@ -4,6 +4,11 @@ const dps = new Array<HTMLInputElement>();
 const supports = new Array<HTMLInputElement>();
 var rolledHeroes = new Array<string>();
 
+const changeColor = () => {
+	let button = document.getElementById('capButton') as HTMLButtonElement;
+	button.style.backgroundColor = button.style.backgroundColor === "#0074d9" ? "#2ecc40" : "#0074d9";
+}
+
 const appendHero = (parent: HTMLElement, arr: Array<HTMLInputElement>, id: string) => {
 	const input = document.createElement("input");
 	input.type = "checkbox";
