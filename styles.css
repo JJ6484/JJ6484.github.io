@@ -11,6 +11,14 @@ span {
     width: 110px;
 }
 
+.left5 {
+    margin-left: 5px;
+}
+
+.bottom5 {
+    margin-bottom: 5px;
+}
+
 h3 {
     cursor: pointer;
 }

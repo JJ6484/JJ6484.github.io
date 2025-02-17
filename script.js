@@ -1,3 +1,4 @@
+var _this = this;
 var vanguards = [
     { name: "Captain America", imgSrc: "/images/vanguard/captain-america.png" },
     { name: "Doctor Strange", imgSrc: "/images/vanguard/doctor-strange.png" },
@@ -95,6 +96,16 @@ var generateHeroes = function () {
         strategistList.appendChild(div);
     });
 };
+var addNames = function (input) {
+    var label = document.querySelector("label[for=" + input.id + "]");
+    var textNames = document.getElementById("textNames");
+    if (textNames && label.textContent) {
+        textNames.textContent = label.textContent.split(", ").join("\n");
+    }
+    else if (textNames && label.textContent === null) {
+        textNames.textContent = null;
+    }
+};
 var changeColor = function (button) {
     button.className = button.className === "stack success" ? "stack button" : "stack success";
 };
@@ -146,3 +157,10 @@ var changeAll = function (select) {
     changeAllStrategists(select);
 };
 generateHeroes();
+document.querySelectorAll("input[type='radio']").forEach(function (radio) {
+    radio.addEventListener("click", function () {
+        if (_this.checked) {
+            _this.checked = false;
+        }
+    });
+});

@@ -114,6 +114,18 @@ const generateHeroes = () => {
 	});
 }
 
+const addNames = (input: HTMLInputElement) => {
+	const label = document.querySelector("label[for=" + input.id + "]") as HTMLLabelElement;
+	const textNames = document.getElementById("textNames");
+
+	if (textNames && label.textContent) {
+		textNames.textContent = label.textContent.split(", ").join("\n");
+	}
+	else if (textNames && label.textContent === null) {
+		textNames.textContent = null;
+	}
+}
+
 const changeColor = (button: HTMLButtonElement) => {
 	button.className = button.className === "stack success" ? "stack button" : "stack success";
 }
@@ -179,3 +191,11 @@ const changeAll = (select: boolean) => {
 }
 
 generateHeroes();
+
+document.querySelectorAll("input[type='radio']").forEach(radio => {
+    radio.addEventListener("click", () => {
+        if (this.checked) {
+            this.checked = false;
+        }
+    });
+});

@@ -21,8 +21,17 @@
           <h3>Names</h3>
           <span id="namesToggle" class="blue">-</span>
         </div>
-        
-        <textarea id="namesSection" oninput="autoResize(this)" placeholder="Enter names on separate lines"></textarea>
+
+        <article id="namesSection" class="card">
+          <input id="presetNames1" type="radio" name="namesButton" onclick="addNames(this)">
+          <label for="presetNames1" class="checkable left5 bottom5">Devin, Fry, Jevon, Luis, Morales</label>
+          <input id="presetNames2" type="radio" name="namesButton" onclick="">
+          <label for="presetNames2" class="checkable left5 bottom5">Devin, Fry, Jevon, Luis, Morales, Shashank</label>
+          <input id="presetNames3" type="radio" name="namesButton" onclick="">
+          <label for="presetNames3" class="checkable left5 bottom5">Jevon, Chandra, Will, Dillon</label>
+
+          <textarea id="textNames" oninput="autoResize(this)" placeholder="Enter names on separate lines"></textarea>
+        </article>
       </div>
 
       <!--Filter heroes-->
@@ -76,12 +85,11 @@
           <span id="optionsToggle" class="blue">-</span>
         </div>
 
-        <article id="optionsSection" class="card" style="margin-bottom: 10px;">
-          <input id="atLeastOption" type="radio" name="atLeastOption">
-          <label for="atLeastOption" class="checkable">Choose AT LEAST the specified amount of characters entered for each role</label>
-          <br>
-          <input id="exactlyOption" type="radio" name="exactlyOption">
-          <label for="exactlyOption" class="checkable">Choose EXACTLY the specified amount of characters entered for each role</label>
+        <article id="optionsSection" class="card">
+          <input id="atLeastOption" type="radio" name="optionsButton">
+          <label for="atLeastOption" class="checkable left5 bottom5">Choose AT LEAST the specified amount of characters entered for each role</label>
+          <input id="exactlyOption" type="radio" name="optionsButton">
+          <label for="exactlyOption" class="checkable left5 bottom5">Choose EXACTLY the specified amount of characters entered for each role</label>
         </div>
       </div>
 
