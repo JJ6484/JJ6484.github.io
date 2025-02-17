@@ -1,20 +1,22 @@
-.width110 {
-    width: 110px;
-}
-
 span {
     font-weight: bold;
     font-size: 20px;
 }
 
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.blue {
+    color: #0074d9;
+}
+
+.width110 {
+    width: 110px;
+}
+
+h3 {
     cursor: pointer;
-    background-color: #f0f0f0;
-    padding: 10px;
-    border-radius: 5px;
+}
+
+.header-container:hover {
+    background-color: #ccc
 }
 
 textarea, article {
@@ -30,16 +32,21 @@ textarea.collapsed, article.collapsed {
     opacity: 0;
 }
 
-h3 {
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     cursor: pointer;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
 }
 
-.header-container:hover {
-    background-color: #ccc
-}
-
-.blue {
-    color: #0074d9;
+#vanguardList, #duelistList, #strategistList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
 }
 
 html{
