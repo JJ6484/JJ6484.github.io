@@ -199,9 +199,18 @@ const changeAll = (select: boolean) => {
 }
 
 const deselectButton = (input: HTMLInputElement) => {
+	return;
 	if (input.checked) {
 		input.checked = false;
 	}
 }
 
 generateHeroes();
+
+document.querySelectorAll("input[type='radio']").forEach((radio: Element) => {
+	radio.addEventListener("click", () => {
+		if (this.checked) {
+			this.checked = false;
+		}
+	});
+});

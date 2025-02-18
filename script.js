@@ -1,3 +1,4 @@
+var _this = this;
 var vanguards = [
     { name: "Captain America", imgSrc: "/images/vanguard/captain-america.png" },
     { name: "Doctor Strange", imgSrc: "/images/vanguard/doctor-strange.png" },
@@ -160,8 +161,16 @@ var changeAll = function (select) {
     changeAllStrategists(select);
 };
 var deselectButton = function (input) {
+    return;
     if (input.checked) {
         input.checked = false;
     }
 };
 generateHeroes();
+document.querySelectorAll("input[type='radio']").forEach(function (radio) {
+    radio.addEventListener("click", function () {
+        if (_this.checked) {
+            _this.checked = false;
+        }
+    });
+});
