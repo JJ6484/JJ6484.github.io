@@ -23,15 +23,26 @@
         </div>
 
         <article id="namesSection" class="card">
-          <input id="presetNames1" type="radio" name="namesButton" onclick="addNames(this)">
+          <input id="presetNames1" type="radio" name="namesButton" onmousedown="deselectButton(this)" onclick="addNames(this)">
           <label for="presetNames1" class="checkable left5 bottom5">Devin, Fry, Jevon, Luis, Morales</label>
-          <input id="presetNames2" type="radio" name="namesButton" onclick="addNames(this)">
+          <input id="presetNames2" type="radio" name="namesButton" onmousedown="deselectButton(this)" onclick="addNames(this)">
           <label for="presetNames2" class="checkable left5 bottom5">Devin, Fry, Jevon, Luis, Morales, Shashank</label>
-          <input id="presetNames3" type="radio" name="namesButton" onclick="addNames(this)">
+          <input id="presetNames3" type="radio" name="namesButton" onmousedown="deselectButton(this)" onclick="addNames(this)">
           <label for="presetNames3" class="checkable left5 bottom5">Jevon, Chandra, Will, Dillon</label>
 
-          <textarea id="textNames" style="margin: 5px 7px; width: 98%; overflow: hidden;" oninput="autoResize(this)" placeholder="Enter names on separate lines"></textarea>
+          <textarea id="textNames" style="margin: 5px 7px; overflow: hidden; width: -webkit-fill-available; width: -moz-fill-available;" oninput="autoResize(this)" placeholder="Enter names on separate lines"></textarea>
         </article>
+      </div>
+
+      <!--Results-->
+      <div>
+        <h3>Randomizer</h3>
+
+        <div style="display: flex; flex-direction: row; gap: 10px">
+          <input class="numberInputs" type="number" placeholder="Vanguards">
+          <input class="numberInputs" type="number" placeholder="Duelists">
+          <input class="numberInputs" type="number" placeholder="Strategists">
+        </div>
       </div>
 
       <!--Filter heroes-->
@@ -86,21 +97,10 @@
         </div>
 
         <article id="optionsSection" class="card">
-          <input id="atLeastOption" type="radio" name="optionsButton">
+          <input id="atLeastOption" type="radio" name="optionsButton" onmousedown="deselectButton(this)">
           <label for="atLeastOption" class="checkable left5 bottom5">Choose AT LEAST the specified amount of characters entered for each role</label>
-          <input id="exactlyOption" type="radio" name="optionsButton">
+          <input id="exactlyOption" type="radio" name="optionsButton" onmousedown="deselectButton(this)">
           <label for="exactlyOption" class="checkable left5 bottom5">Choose EXACTLY the specified amount of characters entered for each role</label>
-        </div>
-      </div>
-
-      <!--Results-->
-      <div>
-        <h3>Randomizer</h3>
-
-        <div style="display: flex; flex-direction: row; gap: 10px">
-          <input class="numberInputs" type="number" placeholder="Vanguards">
-          <input class="numberInputs" type="number" placeholder="Duelists">
-          <input class="numberInputs" type="number" placeholder="Strategists">
         </div>
       </div>
 

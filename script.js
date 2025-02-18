@@ -1,4 +1,3 @@
-var _this = this;
 var vanguards = [
     { name: "Captain America", imgSrc: "/images/vanguard/captain-america.png" },
     { name: "Doctor Strange", imgSrc: "/images/vanguard/doctor-strange.png" },
@@ -98,7 +97,6 @@ var generateHeroes = function () {
     });
 };
 var addNames = function (input) {
-    deselectButton(input);
     var label = document.querySelector("label[for=" + input.id + "]");
     var textArea = document.getElementById("textNames");
     if (!textArea || !label.textContent)
@@ -161,16 +159,8 @@ var changeAll = function (select) {
     changeAllStrategists(select);
 };
 var deselectButton = function (input) {
-    return;
     if (input.checked) {
         input.checked = false;
     }
 };
 generateHeroes();
-document.querySelectorAll("input[type='radio']").forEach(function (radio) {
-    radio.addEventListener("click", function () {
-        if (_this.checked) {
-            _this.checked = false;
-        }
-    });
-});

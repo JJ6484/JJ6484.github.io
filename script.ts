@@ -117,8 +117,6 @@ const generateHeroes = () => {
 }
 
 const addNames = (input: HTMLInputElement) => {
-	deselectButton(input);
-
 	const label = document.querySelector("label[for=" + input.id + "]") as HTMLLabelElement;
 	const textArea = document.getElementById("textNames") as HTMLTextAreaElement;
 
@@ -199,18 +197,9 @@ const changeAll = (select: boolean) => {
 }
 
 const deselectButton = (input: HTMLInputElement) => {
-	return;
 	if (input.checked) {
 		input.checked = false;
 	}
 }
 
 generateHeroes();
-
-document.querySelectorAll("input[type='radio']").forEach((radio: Element) => {
-	radio.addEventListener("click", () => {
-		if (this.checked) {
-			this.checked = false;
-		}
-	});
-});
