@@ -1,36 +1,26 @@
+/*#region My CSS*/
+
+/* Removes arrows from numberical inputs */
 input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-span {
-    font-weight: bold;
-    font-size: 20px;
+/* Padding for whole site */
+.mainPadding {
+	padding: 0 5%;
+	box-sizing: border-box;
 }
 
-.blue {
-    color: #0074d9;
-}
-
-.width110 {
-    width: 110px;
-}
-
-.left5 {
-    margin-left: 5px;
-}
-
-.bottom5 {
-    margin-bottom: 5px;
-}
-
-.numberInputs {
-    width: 25%;
-    margin-bottom: 10px;
-}
-
-h3 {
+/* Styles for region selections */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     cursor: pointer;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 .header-container:hover {
@@ -50,28 +40,72 @@ textarea.collapsed, article.collapsed {
     opacity: 0;
 }
 
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    background-color: #f0f0f0;
-    padding: 10px;
-    border-radius: 5px;
+span {
+    font-weight: bold;
+    font-size: 20px;
 }
 
-#vanguardList, #duelistList, #strategistList {
+h3 {
+    cursor: pointer;
+	margin: 1em 0 0 0;
+}
+
+.blue {
+    color: #0074d9;
+}
+
+/* Styles for text boxes */
+.textBoxes {
+	margin: 5px 7px;
+	overflow: hidden;
+	width: -webkit-fill-available;
+	width: -moz-fill-available;
+}
+
+/* Styles for hero select */
+.overflowAuto {
+	overflow: auto;
+}
+
+.bottom20 {
+	margin-bottom: 20px;
+}
+
+.width110 {
+    width: 110px;
+}
+
+.centerItems {
+    display: flex;
+    align-items: center;
+}
+
+.listFormat {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     padding-bottom: 30px;
 }
 
-.contentBetween {
-    display: flex;
-    justify-content: space-between;
+/* Styles for radio buttons */
+.radioButtons {
+	margin: 0px, 0px, 5px, 5px
 }
 
+/* Styles for randomizer */
+.flexRow {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+}
+
+.numberInputs {
+    width: 25%;
+    margin-bottom: 10px;
+}
+/*#endregion My CSS*/
+
+/*#region Picnic CSS*/
 html{
 	font-family:sans-serif;
 	-ms-text-size-adjust:100%;
@@ -229,7 +263,7 @@ main{
 }
 h1,h2,h3,h4,h5,h6{
 	margin: 0;
-	padding: .6em 0 .2em 0;
+	padding: .6em 0;
 }
 li{
 	margin:0 0 .3em
@@ -3111,3 +3145,4 @@ input.stack:focus+input,input.stack:focus+textarea,input.stack:focus+select,text
 	right:100%;
 	top:7px
 }
+/*#endregion Picnic CSS*/

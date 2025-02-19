@@ -1,205 +1,150 @@
+//#region Lists
+let players: string[] = [];
+
 const vanguards = [
-	{name: "Captain America", imgSrc: "/images/vanguard/captain-america.png"},
-	{name: "Doctor Strange", imgSrc: "/images/vanguard/doctor-strange.png"},
-	{name: "Groot", imgSrc: "/images/vanguard/groot.png"},
-	{name: "Hulk", imgSrc: "/images/vanguard/hulk.png"},
-	{name: "Magneto", imgSrc: "/images/vanguard/magneto.png"},
-	{name: "Peni Parker", imgSrc: "/images/vanguard/peni-parker.png"},
-	{name: "Thor", imgSrc: "/images/vanguard/thor.png"},
-	{name: "Venom", imgSrc: "/images/vanguard/venom.png"},
+	{name: "Captain America", img: "/images/vanguard/captain-america.png"},
+	{name: "Doctor Strange", img: "/images/vanguard/doctor-strange.png"},
+	{name: "Groot", img: "/images/vanguard/groot.png"},
+	{name: "Hulk", img: "/images/vanguard/hulk.png"},
+	{name: "Magneto", img: "/images/vanguard/magneto.png"},
+	{name: "Peni Parker", img: "/images/vanguard/peni-parker.png"},
+	{name: "Thor", img: "/images/vanguard/thor.png"},
+	{name: "Venom", img: "/images/vanguard/venom.png"},
 ];
 
 const duelists = [
-	{name: "Black Panther", imgSrc: "/images/duelist/black-panther.png"},
-	{name: "Black Widow", imgSrc: "/images/duelist/black-widow.png"},
-	{name: "Hawkeye", imgSrc: "/images/duelist/hawkeye.png"},
-	{name: "Hela", imgSrc: "/images/duelist/hela.png"},
-	{name: "Iron Fist", imgSrc: "/images/duelist/iron-fist.png"},
-	{name: "Iron Man", imgSrc: "/images/duelist/iron-man.png"},
-	{name: "Magik", imgSrc: "/images/duelist/magik.png"},
-	{name: "Mister Fantastic", imgSrc: "/images/duelist/mister-fantastic.png"},
-	{name: "Moon Knight", imgSrc: "/images/duelist/moon-knight.png"},
-	{name: "Namor", imgSrc: "/images/duelist/namor.png"},
-	{name: "Psyklocke", imgSrc: "/images/duelist/psylocke.png"},
-	{name: "Scarlet Witch", imgSrc: "/images/duelist/scarlet-witch.png"},
-	{name: "Spider-man", imgSrc: "/images/duelist/spider-man.png"},
-	{name: "Squirrel Girl", imgSrc: "/images/duelist/squirrel-girl.png"},
-	{name: "Star Lord", imgSrc: "/images/duelist/star-lord.png"},
-	{name: "Storm", imgSrc: "/images/duelist/storm.png"},
-	{name: "The Punisher", imgSrc: "/images/duelist/the-punisher.png"},
-	{name: "Winter Soldier", imgSrc: "/images/duelist/winter-soldier.png"},
-	{name: "Wolverine", imgSrc: "/images/duelist/wolverine.png"},
+	{name: "Black Panther", img: "/images/duelist/black-panther.png"},
+	{name: "Black Widow", img: "/images/duelist/black-widow.png"},
+	{name: "Hawkeye", img: "/images/duelist/hawkeye.png"},
+	{name: "Hela", img: "/images/duelist/hela.png"},
+	{name: "Iron Fist", img: "/images/duelist/iron-fist.png"},
+	{name: "Iron Man", img: "/images/duelist/iron-man.png"},
+	{name: "Magik", img: "/images/duelist/magik.png"},
+	{name: "Mister Fantastic", img: "/images/duelist/mister-fantastic.png"},
+	{name: "Moon Knight", img: "/images/duelist/moon-knight.png"},
+	{name: "Namor", img: "/images/duelist/namor.png"},
+	{name: "Psyklocke", img: "/images/duelist/psylocke.png"},
+	{name: "Scarlet Witch", img: "/images/duelist/scarlet-witch.png"},
+	{name: "Spider-man", img: "/images/duelist/spider-man.png"},
+	{name: "Squirrel Girl", img: "/images/duelist/squirrel-girl.png"},
+	{name: "Star Lord", img: "/images/duelist/star-lord.png"},
+	{name: "Storm", img: "/images/duelist/storm.png"},
+	{name: "The Punisher", img: "/images/duelist/the-punisher.png"},
+	{name: "Winter Soldier", img: "/images/duelist/winter-soldier.png"},
+	{name: "Wolverine", img: "/images/duelist/wolverine.png"},
 ];
 
 const strategists = [
-	{name: "Adam Warlock", imgSrc: "/images/strategist/adam-warlock.png"},
-	{name: "Cloak & Dagger", imgSrc: "/images/strategist/cloak-and-dagger.png"},
-	{name: "Invisible Woman", imgSrc: "/images/strategist/invisible-woman.png"},
-	{name: "Jeff the Land Shark", imgSrc: "/images/strategist/jeff-the-land-shark.png"},
-	{name: "Loki", imgSrc: "/images/strategist/loki.png"},
-	{name: "Luna Snow", imgSrc: "/images/strategist/luna-snow.png"},
-	{name: "Mantis", imgSrc: "/images/strategist/mantis.png"},
-	{name: "Rocket Racoon", imgSrc: "/images/strategist/rocket-racoon.png"},
+	{name: "Adam Warlock", img: "/images/strategist/adam-warlock.png"},
+	{name: "Cloak & Dagger", img: "/images/strategist/cloak-and-dagger.png"},
+	{name: "Invisible Woman", img: "/images/strategist/invisible-woman.png"},
+	{name: "Jeff the Land Shark", img: "/images/strategist/jeff-the-land-shark.png"},
+	{name: "Loki", img: "/images/strategist/loki.png"},
+	{name: "Luna Snow", img: "/images/strategist/luna-snow.png"},
+	{name: "Mantis", img: "/images/strategist/mantis.png"},
+	{name: "Rocket Racoon", img: "/images/strategist/rocket-racoon.png"},
 ];
+//#endregion
 
-let players: string[] = [];
-
-const generateHeroes = () => {
-	const vanguardList = document.getElementById("vanguardList") as HTMLDivElement;
-	const duelistList = document.getElementById("duelistList") as HTMLDivElement;
-	const strategistList = document.getElementById("strategistList") as HTMLDivElement;
-
-	vanguards.forEach(vanguard => {
-		const div = document.createElement("div");
-		div.classList.add("width110");
-
-		const img = document.createElement("img");
-		img.classList.add("stack");
-		img.src = vanguard.imgSrc;
-		img.alt = vanguard.name;
-
-		const button = document.createElement("button");
-		button.classList.add("stack", "success");
-		button.textContent = vanguard.name;
-		button.onclick = () => {
-			changeColor(button);
-		};
-
-		div.appendChild(img);
-		div.appendChild(button);
-
-		vanguardList.appendChild(div);
-	});
-
-	duelists.forEach(duelist => {
-		const div = document.createElement("div");
-		div.classList.add("width110");
-
-		const img = document.createElement("img");
-		img.classList.add("stack");
-		img.src = duelist.imgSrc;
-		img.alt = duelist.name;
-
-		const button = document.createElement("button");
-		button.classList.add("stack", "success");
-		button.textContent = duelist.name;
-		button.onclick = () => {
-			changeColor(button);
-		};
-
-		div.appendChild(img);
-		div.appendChild(button);
-
-		duelistList.appendChild(div);
-	});
-
-	strategists.forEach(strategist => {
-		const div = document.createElement("div");
-		div.classList.add("width110");
-
-		const img = document.createElement("img");
-		img.classList.add("stack");
-		img.src = strategist.imgSrc;
-		img.alt = strategist.name;
-
-		const button = document.createElement("button");
-		button.classList.add("stack", "success");
-		button.textContent = strategist.name;
-		button.onclick = () => {
-			changeColor(button);
-		};
-
-		div.appendChild(img);
-		div.appendChild(button);
-
-		strategistList.appendChild(div);
-	});
-}
-
-const addNames = (input: HTMLInputElement) => {
-	const label = document.querySelector("label[for=" + input.id + "]") as HTMLLabelElement;
-	const textArea = document.getElementById("textNames") as HTMLTextAreaElement;
-
-	if (!textArea || !label.textContent)
-		return;
-
-	textArea.textContent = input.checked ? label.textContent.split(", ").join("\n") : null; 
-	autoResize(textArea);
-}
-
-const changeColor = (button: HTMLButtonElement) => {
-	button.className = button.className === "stack success" ? "stack button" : "stack success";
-}
-
-const autoResize = (textArea: HTMLTextAreaElement) => {
-	textArea.style.height = "auto";
-	textArea.style.height = textArea.scrollHeight + "px";
-
-	if (!textArea.textContent)
-		return;
-
-	players = textArea.textContent?.split(", ");
-}
-
-const toggleSection = (section: string) => {
-	const sectionElement = document.getElementById(`${section}Section`);
-	const toggleElement = document.getElementById(`${section}Toggle`);
+//#region Regions
+const toggleSection = (region: string) => {
+	const sectionElement = document.getElementById(`${region}Section`);
+	const toggleElement = document.getElementById(`${region}Toggle`);
 	
 	if (sectionElement && toggleElement) {
 		sectionElement.classList.toggle("collapsed");
 		toggleElement.textContent = sectionElement.classList.contains("collapsed") ? "+" : "-";
 	}
 }
+//#endregion Regions
 
-const changeAllVanguards = (select: boolean) => {
-	const vanguardParent = document.getElementById("vanguardList") as HTMLDivElement;
-	const vanguardChildren = vanguardParent.querySelectorAll("div");
+//#region Hero Select
+const switchSelection = (el: HTMLButtonElement) => {
+	let list = el.classList;
 
-	vanguardChildren.forEach(vanguard => {
-		const button = vanguard.querySelector("button") as HTMLButtonElement;
-		
-		if (button.classList.contains("success") !== select) {
-			changeColor(button);
-		}
-	});
+	if (list.contains("success")) {
+		list.remove("success");
+		list.add("button");
+	}
+	else {
+		list.remove("button");
+		list.add("success");
+	}
 }
 
-const changeAllDuelists = (select: boolean) => {
-	const duelistParent = document.getElementById("duelistList") as HTMLDivElement;
-	const duelistChildren = duelistParent.querySelectorAll("div");
+const changeAllRole = (role: string, select: boolean) => {
+	const parent = document.getElementById(`${role}List`) as HTMLDivElement;
+	const children = parent.querySelectorAll("div");
 
-	duelistChildren.forEach(duelist => {
-		const button = duelist.querySelector("button") as HTMLButtonElement;
-		
+	children.forEach(child => {
+		const button = child.querySelector("button") as HTMLButtonElement;
+
 		if (button.classList.contains("success") !== select) {
-			changeColor(button);
-		}
-	});
-}
-
-const changeAllStrategists = (select: boolean) => {
-	const strategistParent = document.getElementById("strategistList") as HTMLDivElement;
-	const strategistChildren = strategistParent.querySelectorAll("div");
-
-	strategistChildren.forEach(strategist => {
-		const button = strategist.querySelector("button") as HTMLButtonElement;
-		
-		if (button.classList.contains("success") !== select) {
-			changeColor(button);
+			switchSelection(button);
 		}
 	});
 }
 
 const changeAll = (select: boolean) => {
-	changeAllVanguards(select);
-	changeAllDuelists(select);
-	changeAllStrategists(select);
+	changeAllRole("vanguard", select);
+	changeAllRole("duelist", select);
+	changeAllRole("strategist", select);
+}
+//#endregion Hero Select
+
+//#region Names
+const autoResize = (el: HTMLTextAreaElement) => {
+	el.style.height = "auto";
+	el.style.height = el.scrollHeight + "px";
+
+	if (!el.textContent)
+		return;
+
+	players = el.textContent.split(", ");
 }
 
-const deselectButton = (input: HTMLInputElement) => {
-	if (input.checked) {
-		input.checked = false;
-	}
+const addNames = (el: HTMLSelectElement) => {
+	const textArea = document.getElementById("textNames") as HTMLTextAreaElement;
+	if (!textArea)
+		return;
+
+	textArea.textContent = el.selectedIndex === 0 ? "" : el.options[el.selectedIndex].text.split(", ").join("\n"); 
+	autoResize(textArea);
+}
+//#endregion Names
+
+//#region Run on Load
+const generateHeroes = () => {
+	const vanguardList = document.getElementById("vanguardList") as HTMLDivElement;
+	const duelistList = document.getElementById("duelistList") as HTMLDivElement;
+	const strategistList = document.getElementById("strategistList") as HTMLDivElement;
+
+	const addHeroes = (list: HTMLDivElement, child: {name: string, img: string}) => {
+		const div = document.createElement("div");
+		div.classList.add("width110");
+
+		const img = document.createElement("img");
+		img.classList.add("stack");
+		img.src = child.img;
+		img.alt = child.name;
+
+		const button = document.createElement("button");
+		button.classList.add("stack", "success");
+		button.textContent = child.name;
+		button.onclick = () => {
+			switchSelection(button);
+		};
+
+		div.appendChild(img);
+		div.appendChild(button);
+
+		list.appendChild(div);
+	};
+
+	vanguards.forEach(child => addHeroes(vanguardList, child));
+	duelists.forEach(child => addHeroes(duelistList, child));
+	strategists.forEach(child => addHeroes(strategistList, child));
 }
 
 generateHeroes();
+//#endregion Run on Load

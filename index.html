@@ -1,5 +1,7 @@
 <!doctype html>
+
 <html lang="en">
+  <!-- #region Head -->
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,104 +11,100 @@
     <title>Marvel Rivals Randomizer</title>
     <link rel="tab icon" type="image/png" href="images/rivals-logo.png">
   </head>
+  <!-- #endregion Head -->
 
+  <!-- #region Body -->
   <body>
-    <div style="padding: 0 5%; box-sizing: border-box;">
-
+    <div class="mainPadding">
       <h1>Marvel Rivals Randomizer</h1>
 
-      <!--Names-->
-      <div>
-        <div id="namesHeader" class="header-container" onclick="toggleSection('names')">
-          <h3>Names</h3>
-          <span id="namesToggle" class="blue">-</span>
-        </div>
-
-        <article id="namesSection" class="card">
-          <input id="presetNames1" type="radio" name="namesButton" onmousedown="deselectButton(this)" onclick="addNames(this)">
-          <label for="presetNames1" class="checkable left5 bottom5">Devin, Fry, Jevon, Luis, Morales</label>
-          <input id="presetNames2" type="radio" name="namesButton" onmousedown="deselectButton(this)" onclick="addNames(this)">
-          <label for="presetNames2" class="checkable left5 bottom5">Devin, Fry, Jevon, Luis, Morales, Shashank</label>
-          <input id="presetNames3" type="radio" name="namesButton" onmousedown="deselectButton(this)" onclick="addNames(this)">
-          <label for="presetNames3" class="checkable left5 bottom5">Jevon, Chandra, Will, Dillon</label>
-
-          <textarea id="textNames" style="margin: 5px 7px; overflow: hidden; width: -webkit-fill-available; width: -moz-fill-available;" oninput="autoResize(this)" placeholder="Enter names on separate lines"></textarea>
-        </article>
+      <!-- #region Names -->
+      <div id="namesHeader" class="header-container" onclick="toggleSection('names')">
+        <h3>Names</h3>
+        <span id="namesToggle" class="blue">-</span>
       </div>
 
-      <!--Results-->
-      <div>
-        <h3>Randomizer</h3>
+      <article id="namesSection" class="card">
+        <select onchange="addNames(this)">
+          <option>--Choose a preset--</option>
+          <option>Devin, Fry, Jevon, Luis, Morales</option>
+          <option>Devin, Fry, Jevon, Luis, Morales, Shashank</option>
+          <option>Jevon, Chandra, Will, Dillon</option>
+        </select>
 
-        <div style="display: flex; flex-direction: row; gap: 10px">
-          <input class="numberInputs" type="number" placeholder="Vanguards">
-          <input class="numberInputs" type="number" placeholder="Duelists">
-          <input class="numberInputs" type="number" placeholder="Strategists">
-        </div>
+        <textarea id="textNames" class="textBoxes" oninput="autoResize(this)" placeholder="Enter names on separate lines"></textarea>
+      </article>
+      <!-- #endregion Names -->
+
+      <!-- #region Filter heroes -->
+      <div id="filterHeroesHeader" class="header-container" onclick="toggleSection('filterHeroes')">
+        <h3>Filter heroes</h3>
+        <span id="filterHeroesToggle" class="blue">+</span>
       </div>
 
-      <!--Filter heroes-->
-      <div>
-        <div id="filterHeroesHeader" class="header-container" onclick="toggleSection('filterHeroes')">
-          <h3>Filter heroes</h3>
-          <span id="filterHeroesToggle" class="blue">+</span>
-        </div>
+      <article id="filterHeroesSection" class="card collapsed overflowAuto">
+        <header>
+          <div class="bottom20">
+            <button class="button" onclick="changeAll(true)">Select All</button>
+            <button class="button" onclick="changeAll(false)">Unselect All</button>
+          </div>
 
-        <article id="filterHeroesSection" class="card collapsed" style="overflow: auto;">
-          <header>
-            <div style="margin-bottom: 20px;">
-              <button class="button" onclick="changeAll(true)">Select All</button>
-              <button class="button" onclick="changeAll(false)">Unselect All</button>
+          <div class="alignCenter">
+            <h4>Vanguards</h4>
+            <div>
+              <button class="button" onclick="changeAllVanguards(true)">Select All</button>
+              <button class="button" onclick="changeAllVanguards(false)">Unselect All</button>
             </div>
+          </div>
+          <div id="vanguardList" class="listFormat"></div>
+          
+          <div class="alignCenter">
+            <h4>Duelists</h4>
+            <div>
+              <button class="button" onclick="changeAllDuelists(true)">Select All</button>
+              <button class="button" onclick="changeAllDuelists(false)">Unselect All</button>
+            </div>
+          </div>
+          <div id="duelistList" class="listFormat"></div>
 
-            <div class="contentBetween">
-              <h4>Vanguards</h4>
-              <div>
-                <button class="button" onclick="changeAllVanguards(true)">Select All</button>
-                <button class="button" onclick="changeAllVanguards(false)">Unselect All</button>
-              </div>
+          <div class="alignCenter">
+            <h4>Strategists</h4>
+            <div>
+              <button class="button" onclick="changeAllStrategists(true)">Select All</button>
+              <button class="button" onclick="changeAllStrategists(false)">Unselect All</button>
             </div>
-            <div id="vanguardList"></div>
-            
-            <div class="contentBetween">
-              <h4>Duelists</h4>
-              <div>
-                <button class="button" onclick="changeAllDuelists(true)">Select All</button>
-                <button class="button" onclick="changeAllDuelists(false)">Unselect All</button>
-              </div>
-            </div>
-            <div id="duelistList"></div>
+          </div>
+          <div id="strategistList" class="listFormat"></div>
+        </header>
+      </article>
+      <!-- #endregion Filter heroes -->
 
-            <div class="contentBetween">
-              <h4>Strategists</h4>
-              <div>
-                <button class="button" onclick="changeAllStrategists(true)">Select All</button>
-                <button class="button" onclick="changeAllStrategists(false)">Unselect All</button>
-              </div>
-            </div>
-            <div id="strategistList"></div>
-          </header>
-        </article>
+      <!-- #region Options -->
+      <div id="optionsHeader" class="header-container" onclick="toggleSection('options')">
+        <h3>Options</h3>
+        <span id="optionsToggle" class="blue">-</span>
       </div>
 
-      <!--Options-->
-      <div>
-        <div id="optionsHeader" class="header-container" onclick="toggleSection('options')">
-          <h3>Options</h3>
-          <span id="optionsToggle" class="blue">-</span>
-        </div>
+      <article id="optionsSection" class="card">
+        <input id="atLeastOption" type="radio" name="optionsButton" onmousedown="deselectButton(this)">
+        <label for="atLeastOption" class="checkable radioButtons">Choose AT LEAST the specified amount of characters entered for each role</label>
+        <input id="exactlyOption" type="radio" name="optionsButton" onmousedown="deselectButton(this)">
+        <label for="exactlyOption" class="checkable radioButtons">Choose EXACTLY the specified amount of characters entered for each role</label>
+      </article>
+      <!-- #endregion Options -->
 
-        <article id="optionsSection" class="card">
-          <input id="atLeastOption" type="radio" name="optionsButton" onmousedown="deselectButton(this)">
-          <label for="atLeastOption" class="checkable left5 bottom5">Choose AT LEAST the specified amount of characters entered for each role</label>
-          <input id="exactlyOption" type="radio" name="optionsButton" onmousedown="deselectButton(this)">
-          <label for="exactlyOption" class="checkable left5 bottom5">Choose EXACTLY the specified amount of characters entered for each role</label>
-        </div>
+      <!-- #region Results -->
+      <h3>Randomizer</h3>
+
+      <div class="flexRow">
+        <input class="numberInputs" type="number" placeholder="Vanguards">
+        <input class="numberInputs" type="number" placeholder="Duelists">
+        <input class="numberInputs" type="number" placeholder="Strategists">
       </div>
-
+      <!-- #endregion Results -->
     </div>
 
     <script src="script.js"></script>
   </body>
-
+  <!-- #endregion Body -->
 </html>
