@@ -54,9 +54,12 @@ h3 {
     color: #0074d9;
 }
 
+.padding5 {
+	padding: 5px;
+}
+
 /* Styles for text boxes */
 .textBoxes {
-	margin: 5px 7px;
 	overflow: hidden;
 	width: -webkit-fill-available;
 	width: -moz-fill-available;
