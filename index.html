@@ -25,8 +25,8 @@
       </div>
 
       <article id="namesSection" class="card padding5">
-        <select onchange="addNames(this)">
-          <option>--Choose a preset--</option>
+        <select class="bottom10" onchange="addNames(this)">
+          <option>-- Choose a preset --</option>
           <option>Devin, Fry, Jevon, Luis, Morales</option>
           <option>Devin, Fry, Jevon, Luis, Morales, Shashank</option>
           <option>Jevon, Chandra, Will, Dillon</option>
@@ -86,7 +86,7 @@
       </div>
 
       <article id="optionsSection" class="card padding5">
-        <input id="atLeastOption" type="radio" name="optionsButton" onmousedown="deselectButton(this)">
+        <input id="atLeastOption" type="radio" name="optionsButton" onmousedown="deselectButton(this)" checked>
         <label for="atLeastOption" class="checkable radioButtons">Choose AT LEAST the specified amount of characters entered for each role</label>
         <input id="exactlyOption" type="radio" name="optionsButton" onmousedown="deselectButton(this)">
         <label for="exactlyOption" class="checkable radioButtons">Choose EXACTLY the specified amount of characters entered for each role</label>

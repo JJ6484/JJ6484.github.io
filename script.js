@@ -52,6 +52,22 @@ var toggleSection = function (region) {
     }
 };
 //#endregion Regions
+//#region Names
+var autoResize = function (el) {
+    el.style.height = "auto";
+    el.style.height = el.scrollHeight + "px";
+    if (!el.textContent)
+        return;
+    players = el.textContent.split(", ");
+};
+var addNames = function (el) {
+    var textArea = document.getElementById("textNames");
+    if (!textArea)
+        return;
+    textArea.value = el.selectedIndex === 0 ? "" : el.options[el.selectedIndex].text.split(", ").join("\n");
+    autoResize(textArea);
+};
+//#endregion Names
 //#region Hero Select
 var switchSelection = function (el) {
     var list = el.classList;
@@ -80,22 +96,6 @@ var changeAll = function (select) {
     changeAllRole("strategist", select);
 };
 //#endregion Hero Select
-//#region Names
-var autoResize = function (el) {
-    el.style.height = "auto";
-    el.style.height = el.scrollHeight + "px";
-    if (!el.textContent)
-        return;
-    players = el.textContent.split(", ");
-};
-var addNames = function (el) {
-    var textArea = document.getElementById("textNames");
-    if (!textArea)
-        return;
-    textArea.textContent = el.selectedIndex === 0 ? "" : el.options[el.selectedIndex].text.split(", ").join("\n");
-    autoResize(textArea);
-};
-//#endregion Names
 //#region Run on Load
 var generateHeroes = function () {
     var vanguardList = document.getElementById("vanguardList");

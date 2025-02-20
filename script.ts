@@ -58,6 +58,27 @@ const toggleSection = (region: string) => {
 }
 //#endregion Regions
 
+//#region Names
+const autoResize = (el: HTMLTextAreaElement) => {
+	el.style.height = "auto";
+	el.style.height = el.scrollHeight + "px";
+
+	if (!el.textContent)
+		return;
+
+	players = el.textContent.split(", ");
+}
+
+const addNames = (el: HTMLSelectElement) => {
+	const textArea = document.getElementById("textNames") as HTMLTextAreaElement;
+	if (!textArea)
+		return;
+
+	textArea.value = el.selectedIndex === 0 ? "" : el.options[el.selectedIndex].text.split(", ").join("\n"); 
+	autoResize(textArea);
+}
+//#endregion Names
+
 //#region Hero Select
 const switchSelection = (el: HTMLButtonElement) => {
 	let list = el.classList;
@@ -91,27 +112,6 @@ const changeAll = (select: boolean) => {
 	changeAllRole("strategist", select);
 }
 //#endregion Hero Select
-
-//#region Names
-const autoResize = (el: HTMLTextAreaElement) => {
-	el.style.height = "auto";
-	el.style.height = el.scrollHeight + "px";
-
-	if (!el.textContent)
-		return;
-
-	players = el.textContent.split(", ");
-}
-
-const addNames = (el: HTMLSelectElement) => {
-	const textArea = document.getElementById("textNames") as HTMLTextAreaElement;
-	if (!textArea)
-		return;
-
-	textArea.textContent = el.selectedIndex === 0 ? "" : el.options[el.selectedIndex].text.split(", ").join("\n"); 
-	autoResize(textArea);
-}
-//#endregion Names
 
 //#region Run on Load
 const generateHeroes = () => {
