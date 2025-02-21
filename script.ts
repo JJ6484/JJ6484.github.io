@@ -93,9 +93,15 @@ const switchSelection = (el: HTMLButtonElement) => {
 	}
 }
 
-const changeAllRole = (role: string, select: boolean) => {
+const changeAllRole = (role: string) => {
 	const parent = document.getElementById(`${role}List`) as HTMLDivElement;
 	const children = parent.querySelectorAll("div");
+
+	const button = document.getElementById(`${role}Select`);
+	if (!button)
+		return;
+
+	const select = button.textContent === "Select All";
 
 	children.forEach(child => {
 		const button = child.querySelector("button") as HTMLButtonElement;
@@ -105,23 +111,19 @@ const changeAllRole = (role: string, select: boolean) => {
 		}
 	});
 
-	const button = document.getElementById(`${role}Select`);
-	if (!button)
-		return;
-
 	button.textContent = select ? "Unselect All" : "Select All";
 }
 
-const changeAll = (select: boolean) => {
-	changeAllRole("vanguard", select);
-	changeAllRole("duelist", select);
-	changeAllRole("strategist", select);
+const changeAll = () => {
+	changeAllRole("vanguard");
+	changeAllRole("duelist");
+	changeAllRole("strategist");
 
 	const button = document.getElementById("allSelect");
 	if (!button)
 		return;
 
-	button.textContent = select ? "Unselect All" : "Select All";
+	button.textContent = button.textContent === "Select All" ? "Unselect All" : "Select All";
 }
 //#endregion Hero Select
 

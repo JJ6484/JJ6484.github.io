@@ -80,28 +80,29 @@ var switchSelection = function (el) {
         list.add("success");
     }
 };
-var changeAllRole = function (role, select) {
+var changeAllRole = function (role) {
     var parent = document.getElementById("".concat(role, "List"));
     var children = parent.querySelectorAll("div");
+    var button = document.getElementById("".concat(role, "Select"));
+    if (!button)
+        return;
+    var select = button.textContent === "Select All";
     children.forEach(function (child) {
         var button = child.querySelector("button");
         if (button.classList.contains("success") !== select) {
             switchSelection(button);
         }
     });
-    var button = document.getElementById("".concat(role, "Select"));
-    if (!button)
-        return;
     button.textContent = select ? "Unselect All" : "Select All";
 };
-var changeAll = function (select) {
-    changeAllRole("vanguard", select);
-    changeAllRole("duelist", select);
-    changeAllRole("strategist", select);
+var changeAll = function () {
+    changeAllRole("vanguard");
+    changeAllRole("duelist");
+    changeAllRole("strategist");
     var button = document.getElementById("allSelect");
     if (!button)
         return;
-    button.textContent = select ? "Unselect All" : "Select All";
+    button.textContent = button.textContent === "Select All" ? "Unselect All" : "Select All";
 };
 //#endregion Hero Select
 //#region Run on Load
