@@ -89,6 +89,10 @@ var changeAllRole = function (role, select) {
             switchSelection(button);
         }
     });
+    var button = document.getElementById("".concat(role, "Select"));
+    if (!button)
+        return;
+    button.textContent = select ? "Unselect All" : "Select All";
 };
 var changeAll = function (select) {
     changeAllRole("vanguard", select);

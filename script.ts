@@ -104,6 +104,12 @@ const changeAllRole = (role: string, select: boolean) => {
 			switchSelection(button);
 		}
 	});
+
+	const button = document.getElementById(`${role}Select`);
+	if (!button)
+		return;
+
+	button.textContent = select ? "Unselect All" : "Select All";
 }
 
 const changeAll = (select: boolean) => {
