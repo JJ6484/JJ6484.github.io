@@ -44,25 +44,22 @@
 
       <article id="filterHeroesSection" class="card collapsed overflowAuto">
         <header>
-          <button id="selectAll" class="button bottom20" onclick="changeAll(false)">Unselect All</button>
+          <button id="allSelect" class="button bottom20" onclick="changeAll(false)">Unselect All</button>
 
           <div class="centerItems">
             <h4>Vanguards</h4>
-            <button class="button" onclick="changeAllRole('vanguard', true)">Select All</button>
             <button id="vanguardSelect" class="button" onclick="changeAllRole('vanguard', false)">Unselect All</button>
           </div>
           <div id="vanguardList" class="listFormat"></div>
           
           <div class="centerItems">
             <h4>Duelists</h4>
-            <button class="button" onclick="changeAllRole('duelist', true)">Select All</button>
             <button id="duelistSelect" class="button" onclick="changeAllRole('duelist', false)">Unselect All</button>
           </div>
           <div id="duelistList" class="listFormat"></div>
 
           <div class="centerItems">
             <h4>Strategists</h4>
-            <button class="button" onclick="changeAllRole('strategist', true)">Select All</button>
             <button id="strategistSelect" class="button" onclick="changeAllRole('strategist', false)">Unselect All</button>
           </div>
           <div id="strategistList" class="listFormat"></div>

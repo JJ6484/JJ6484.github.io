@@ -98,6 +98,10 @@ var changeAll = function (select) {
     changeAllRole("vanguard", select);
     changeAllRole("duelist", select);
     changeAllRole("strategist", select);
+    var button = document.getElementById("allSelect");
+    if (!button)
+        return;
+    button.textContent = select ? "Unselect All" : "Select All";
 };
 //#endregion Hero Select
 //#region Run on Load

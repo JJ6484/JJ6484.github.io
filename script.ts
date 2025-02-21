@@ -116,6 +116,12 @@ const changeAll = (select: boolean) => {
 	changeAllRole("vanguard", select);
 	changeAllRole("duelist", select);
 	changeAllRole("strategist", select);
+
+	const button = document.getElementById("allSelect");
+	if (!button)
+		return;
+
+	button.textContent = select ? "Unselect All" : "Select All";
 }
 //#endregion Hero Select
 
